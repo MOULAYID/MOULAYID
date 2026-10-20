@@ -1,0 +1,184 @@
+{
+  "dashboards": [
+    {
+      "id": "dataco",
+      "status": "captured",
+      "url": "https://moulayid.github.io/DataCo-Global-Supply-Chain-Analytics/",
+      "chartCount": 22
+    },
+    {
+      "id": "realmadrid",
+      "status": "unavailable",
+      "reason": "TimeoutError: locator.waitFor: Timeout 60000ms exceeded.\nCall log:\n  - waiting for locator('.recharts-wrapper svg').first() to be visible\n"
+    },
+    {
+      "id": "formula1",
+      "status": "unavailable",
+      "reason": "TimeoutError: locator.waitFor: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator('body') to be visible\n    63 × locator resolved to hidden <body>…</body>\n"
+    }
+  ],
+  "profile": [
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "status": "checked",
+      "images": [
+        {
+          "alt": "MOULAYID — Data Analyst. SQL, Python, Power BI and Machine Learning.",
+          "loaded": true
+        },
+        {
+          "alt": "Featured work",
+          "loaded": true
+        },
+        {
+          "alt": "More projects",
+          "loaded": true
+        },
+        {
+          "alt": "Opportunities and contact",
+          "loaded": true
+        },
+        {
+          "alt": "Actual browser capture of the DataCo dashboard",
+          "loaded": true
+        },
+        {
+          "alt": "SQL",
+          "loaded": true
+        },
+        {
+          "alt": "Python",
+          "loaded": true
+        },
+        {
+          "alt": "Pandas",
+          "loaded": true
+        },
+        {
+          "alt": "NumPy",
+          "loaded": true
+        },
+        {
+          "alt": "Power BI",
+          "loaded": true
+        },
+        {
+          "alt": "DAX",
+          "loaded": true
+        },
+        {
+          "alt": "PostgreSQL",
+          "loaded": true
+        },
+        {
+          "alt": "API Integration",
+          "loaded": true
+        },
+        {
+          "alt": "scikit-learn",
+          "loaded": true
+        },
+        {
+          "alt": "Statistical Analysis",
+          "loaded": true
+        },
+        {
+          "alt": "Bayesian Networks",
+          "loaded": true
+        },
+        {
+          "alt": "pyAgrum",
+          "loaded": true
+        }
+      ],
+      "layout": {
+        "clientWidth": 846,
+        "scrollWidth": 846
+      }
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "checked",
+      "images": [
+        {
+          "alt": "MOULAYID — Data Analyst. SQL, Python, Power BI and Machine Learning.",
+          "loaded": true
+        },
+        {
+          "alt": "Featured work",
+          "loaded": true
+        },
+        {
+          "alt": "More projects",
+          "loaded": true
+        },
+        {
+          "alt": "Opportunities and contact",
+          "loaded": true
+        },
+        {
+          "alt": "Actual browser capture of the DataCo dashboard",
+          "loaded": true
+        },
+        {
+          "alt": "SQL",
+          "loaded": true
+        },
+        {
+          "alt": "Python",
+          "loaded": true
+        },
+        {
+          "alt": "Pandas",
+          "loaded": true
+        },
+        {
+          "alt": "NumPy",
+          "loaded": true
+        },
+        {
+          "alt": "Power BI",
+          "loaded": true
+        },
+        {
+          "alt": "DAX",
+          "loaded": true
+        },
+        {
+          "alt": "PostgreSQL",
+          "loaded": true
+        },
+        {
+          "alt": "API Integration",
+          "loaded": true
+        },
+        {
+          "alt": "scikit-learn",
+          "loaded": true
+        },
+        {
+          "alt": "Statistical Analysis",
+          "loaded": true
+        },
+        {
+          "alt": "Bayesian Networks",
+          "loaded": true
+        },
+        {
+          "alt": "pyAgrum",
+          "loaded": true
+        }
+      ],
+      "layout": {
+        "clientWidth": 308,
+        "scrollWidth": 308
+      }
+    }
+  ]
+}

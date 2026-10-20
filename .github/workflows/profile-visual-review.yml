@@ -60,3 +60,5 @@ jobs:
             git commit -m "Add verified dashboard screenshots to profile"
             git push
           fi
+
+# Include the repaired public Real Madrid dashboard in the profile review.

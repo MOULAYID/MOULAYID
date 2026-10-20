@@ -8,15 +8,21 @@ const report = { dashboards: [], profile: [] };
 let readme = await fs.readFile('README.md', 'utf8');
 
 for (const item of [
-  { id: 'dataco', name: 'DataCo dashboard', url: 'https://moulayid.github.io/DataCo-Global-Supply-Chain-Analytics/', expected: /revenue|supply|profit|sales/i },
-  { id: 'realmadrid', name: 'Real Madrid dashboard', url: 'https://moulayid.github.io/real-madrid-analytics/', expected: /madrid|revenue|financial/i },
+  { id: 'dataco', name: 'DataCo dashboard', url: 'https://moulayid.github.io/DataCo-Global-Supply-Chain-Analytics/', expected: /revenue|supply|profit|sales/i, ready: '.recharts-wrapper svg' },
+  { id: 'realmadrid', name: 'Real Madrid dashboard', url: 'https://moulayid.github.io/real-madrid-analytics/', expected: /madrid|revenue|financial/i, ready: '.recharts-wrapper svg' },
+  { id: 'formula1', name: 'Formula 1 dashboard', url: 'http://127.0.0.1:8501/', link: 'https://github.com/MOULAYID/Formula-1-World-Championship', local: true, expected: /INTELLIGENCE OVERVIEW/i, ready: '[data-testid="stPlotlyChart"]' },
 ]) {
   const page = await browser.newPage({ viewport: { width: 1440, height: 1000 }, deviceScaleFactor: 1 });
   try {
-    const response = await page.goto(item.url, { waitUntil: 'networkidle', timeout: 60000 });
+    const response = await page.goto(item.url, { waitUntil: 'domcontentloaded', timeout: 60000 });
     if (!response?.ok()) throw new Error('HTTP ' + response?.status());
     await page.locator('body').waitFor();
     await page.waitForFunction(() => document.body.innerText.trim().length > 180, { timeout: 20000 });
+    if (item.id === 'dataco') {
+      await page.getByRole('button', { name: 'Executive Summary', exact: true }).click();
+    }
+    await page.locator(item.ready).first().waitFor({ state: 'visible', timeout: 60000 });
+    await page.waitForFunction(() => !/Loading Overview Analytics/.test(document.body.innerText), { timeout: 30000 });
     const text = await page.locator('body').innerText();
     if (!item.expected.test(text)) throw new Error('Expected dashboard content missing');
     const chartCount = await page.locator('svg, canvas').count();
@@ -25,7 +31,9 @@ for (const item of [
     const filename = 'assets/previews/' + item.id + '.png';
     await page.screenshot({ path: filename, fullPage: false, animations: 'disabled' });
     const marker = '<!-- preview:' + item.id + ' -->';
-    const preview = marker + '\n\n<a href="' + item.url + '"><img src="./' + filename + '" alt="Actual browser capture of the ' + item.name + '" width="100%" /></a>\n\n<sub>Actual dashboard capture · <a href="' + item.url + '">Open interactive view ↗</a></sub>';
+    const link = item.link || item.url;
+    const caption = item.local ? 'Actual browser capture of the locally run application' : 'Actual dashboard capture';
+    const preview = marker + '\n\n<a href="' + link + '"><img src="./' + filename + '" alt="Actual browser capture of the ' + item.name + '" width="100%" /></a>\n\n<sub>' + caption + ' · <a href="' + link + '">' + (item.local ? 'View project' : 'Open interactive view') + ' ↗</a></sub>';
     if (!readme.includes('./' + filename)) readme = readme.replace(marker, preview);
     report.dashboards.push({ id: item.id, status: 'captured', url: item.url, chartCount });
   } catch (error) {
@@ -52,5 +60,6 @@ for (const viewport of [{ width: 1440, height: 1000 }, { width: 390, height: 844
 }
 await browser.close();
 await fs.writeFile('README.md', readme);
+await fs.writeFile('assets/previews/review-report.json', JSON.stringify(report, null, 2) + '\n');
 await fs.writeFile('review/report.json', JSON.stringify(report, null, 2) + '\n');
 console.log(JSON.stringify(report, null, 2));

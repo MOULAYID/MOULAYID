@@ -8,6 +8,7 @@ const report = { dashboards: [], profile: [] };
 let readme = await fs.readFile('README.md', 'utf8');
 
 for (const item of [
+  { id: 'realmadrid', name: 'Real Madrid dashboard', url: 'https://moulayid.github.io/real-madrid-analytics/', expected: /madrid|revenue|financial/i, ready: '.recharts-wrapper svg' },
   { id: 'dataco', name: 'DataCo dashboard', url: 'https://moulayid.github.io/DataCo-Global-Supply-Chain-Analytics/', expected: /revenue|supply|profit|sales/i, ready: '.recharts-wrapper svg' },
   { id: 'formula1', name: 'Formula 1 dashboard', url: 'http://127.0.0.1:8501/', link: 'https://github.com/MOULAYID/Formula-1-World-Championship', local: true, expected: /Executive Overview/i, ready: '[data-testid="stPlotlyChart"]' },
 ]) {

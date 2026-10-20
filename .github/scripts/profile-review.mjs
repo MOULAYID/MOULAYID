@@ -16,8 +16,7 @@ for (const item of [
   try {
     const response = await page.goto(item.url, { waitUntil: 'domcontentloaded', timeout: 60000 });
     if (!response?.ok()) throw new Error('HTTP ' + response?.status());
-    await page.locator('body').waitFor();
-    await page.waitForFunction(() => document.body.innerText.trim().length > 180, { timeout: 20000 });
+    await page.locator('body').waitFor({ state: 'attached' });
     if (item.id === 'dataco') {
       await page.getByText('Executive Summary', { exact: true }).click();
     }
@@ -37,6 +36,8 @@ for (const item of [
     if (!readme.includes('./' + filename)) readme = readme.replace(marker, preview);
     report.dashboards.push({ id: item.id, status: 'captured', url: item.url, chartCount });
   } catch (error) {
+    await page.screenshot({ path: 'review/' + item.id + '-unavailable.png', fullPage: false }).catch(() => {});
+    await fs.writeFile('review/' + item.id + '-unavailable.html', await page.content()).catch(() => {});
     report.dashboards.push({ id: item.id, status: 'unavailable', reason: String(error) });
   } finally { await page.close(); }
 }

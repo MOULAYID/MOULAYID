@@ -7,15 +7,9 @@
       "chartCount": 22
     },
     {
-      "id": "realmadrid",
-      "status": "captured",
-      "url": "http://127.0.0.1:8502/",
-      "chartCount": 141
-    },
-    {
       "id": "formula1",
       "status": "captured",
-      "url": "http://127.0.0.1:8501/Home",
+      "url": "http://127.0.0.1:8501/",
       "chartCount": 15
     }
   ],
@@ -45,6 +39,10 @@
         },
         {
           "alt": "Actual browser capture of the DataCo dashboard",
+          "loaded": true
+        },
+        {
+          "alt": "Actual browser capture of the Formula 1 dashboard",
           "loaded": true
         },
         {
@@ -126,6 +124,10 @@
         },
         {
           "alt": "Actual browser capture of the DataCo dashboard",
+          "loaded": true
+        },
+        {
+          "alt": "Actual browser capture of the Formula 1 dashboard",
           "loaded": true
         },
         {

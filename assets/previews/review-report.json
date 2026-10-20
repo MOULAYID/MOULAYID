@@ -8,13 +8,15 @@
     },
     {
       "id": "realmadrid",
-      "status": "unavailable",
-      "reason": "TimeoutError: locator.waitFor: Timeout 60000ms exceeded.\nCall log:\n  - waiting for locator('.recharts-wrapper svg').first() to be visible\n"
+      "status": "captured",
+      "url": "http://127.0.0.1:8502/",
+      "chartCount": 141
     },
     {
       "id": "formula1",
-      "status": "unavailable",
-      "reason": "TimeoutError: locator.waitFor: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator('body') to be visible\n    63 × locator resolved to hidden <body>…</body>\n"
+      "status": "captured",
+      "url": "http://127.0.0.1:8501/Home",
+      "chartCount": 15
     }
   ],
   "profile": [

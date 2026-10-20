@@ -43,6 +43,10 @@ A portfolio project combining Python data preparation, statistical analysis, and
 
 <!-- preview:formula1 -->
 
+<a href="https://github.com/MOULAYID/Formula-1-World-Championship"><img src="./assets/previews/formula1.png" alt="Actual browser capture of the Formula 1 dashboard" width="100%" /></a>
+
+<sub>Actual browser capture of the locally run application · <a href="https://github.com/MOULAYID/Formula-1-World-Championship">View project ↗</a></sub>
+
 A Streamlit analytics project with historical performance comparisons, circuit and strategy analysis, and predictive-modelling experiments.
 
 `Python` `Streamlit` `Plotly` `scikit-learn`
@@ -56,6 +60,10 @@ A Streamlit analytics project with historical performance comparisons, circuit a
 **Business question:** How do revenue, costs, and squad investment shape a football club’s financial performance?
 
 <!-- preview:realmadrid -->
+
+<a href="https://github.com/MOULAYID/real-madrid-analytics"><img src="./assets/previews/realmadrid.png" alt="Actual browser capture of the Real Madrid dashboard" width="100%" /></a>
+
+<sub>Actual browser capture of the locally run application · <a href="https://github.com/MOULAYID/real-madrid-analytics">View project ↗</a></sub>
 
 A financial analytics project covering revenue and cost trends, investment scenarios, and club benchmarking, with dashboard, API, and data-pipeline code.
 

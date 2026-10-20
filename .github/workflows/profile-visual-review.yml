@@ -30,7 +30,7 @@ jobs:
           git clone --depth 1 https://github.com/MOULAYID/Formula-1-World-Championship.git "$RUNNER_TEMP/f1"
           python -m pip install -r "$RUNNER_TEMP/f1/requirements.txt"
           cd "$RUNNER_TEMP/f1"
-          python -m streamlit run dashboard/Overview.py --server.address 127.0.0.1 --server.port 8501 --server.headless true --browser.gatherUsageStats false > "$RUNNER_TEMP/f1.log" 2>&1 &
+          python -m streamlit run dashboard/Overview.py --server.address 127.0.0.1 --server.port 8501 --theme.base dark --server.headless true --browser.gatherUsageStats false > "$RUNNER_TEMP/f1.log" 2>&1 &
           python - <<'PY'
           import time, urllib.request
           for attempt in range(60):
@@ -41,23 +41,6 @@ jobs:
                   time.sleep(1)
           else:
               raise RuntimeError("Formula 1 dashboard did not start")
-          PY
-      - name: Start Real Madrid dashboard from public source
-        run: |
-          git clone --depth 1 https://github.com/MOULAYID/real-madrid-analytics.git "$RUNNER_TEMP/realmadrid"
-          python -m pip install -r "$RUNNER_TEMP/realmadrid/requirements.txt"
-          cd "$RUNNER_TEMP/realmadrid"
-          PYTHONPATH="$RUNNER_TEMP/realmadrid" python -m streamlit run dashboard/app.py --server.address 127.0.0.1 --server.port 8502 --server.headless true --browser.gatherUsageStats false > "$RUNNER_TEMP/realmadrid.log" 2>&1 &
-          python - <<'PY'
-          import time, urllib.request
-          for attempt in range(60):
-              try:
-                  urllib.request.urlopen("http://127.0.0.1:8502/_stcore/health", timeout=2)
-                  break
-              except Exception:
-                  time.sleep(1)
-          else:
-              raise RuntimeError("Real Madrid dashboard did not start")
           PY
       - name: Capture dashboards and review desktop and mobile
         run: node .github/scripts/profile-review.mjs

@@ -9,14 +9,16 @@ let readme = await fs.readFile('README.md', 'utf8');
 
 for (const item of [
   { id: 'dataco', name: 'DataCo dashboard', url: 'https://moulayid.github.io/DataCo-Global-Supply-Chain-Analytics/', expected: /revenue|supply|profit|sales/i, ready: '.recharts-wrapper svg' },
-  { id: 'realmadrid', name: 'Real Madrid dashboard', url: 'http://127.0.0.1:8502/', link: 'https://github.com/MOULAYID/real-madrid-analytics', local: true, expected: /madrid|revenue|financial/i, ready: '[data-testid="stPlotlyChart"]' },
-  { id: 'formula1', name: 'Formula 1 dashboard', url: 'http://127.0.0.1:8501/Home', link: 'https://github.com/MOULAYID/Formula-1-World-Championship', local: true, expected: /Executive Overview/i, ready: '[data-testid="stPlotlyChart"]' },
+  { id: 'formula1', name: 'Formula 1 dashboard', url: 'http://127.0.0.1:8501/', link: 'https://github.com/MOULAYID/Formula-1-World-Championship', local: true, expected: /Executive Overview/i, ready: '[data-testid="stPlotlyChart"]' },
 ]) {
   const page = await browser.newPage({ viewport: { width: 1440, height: 1000 }, deviceScaleFactor: 1 });
   try {
     const response = await page.goto(item.url, { waitUntil: 'domcontentloaded', timeout: 60000 });
     if (!response?.ok()) throw new Error('HTTP ' + response?.status());
     await page.locator('body').waitFor({ state: 'attached' });
+    if (item.id === 'formula1') {
+      await page.getByRole('link', { name: /Home/ }).click();
+    }
     if (item.id === 'dataco') {
       await page.getByText('Executive Summary', { exact: true }).click();
     }
@@ -27,6 +29,7 @@ for (const item of [
     const chartCount = await page.locator('svg, canvas').count();
     if (chartCount < 1) throw new Error('No chart or graphic rendered');
     await page.evaluate(() => document.fonts.ready);
+    await page.waitForTimeout(1500);
     const filename = 'assets/previews/' + item.id + '.png';
     await page.screenshot({ path: filename, fullPage: false, animations: 'disabled' });
     const marker = '<!-- preview:' + item.id + ' -->';

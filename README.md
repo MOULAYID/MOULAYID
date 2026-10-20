@@ -61,6 +61,10 @@ A Streamlit analytics project with historical performance comparisons, circuit a
 
 <!-- preview:realmadrid -->
 
+<a href="https://moulayid.github.io/real-madrid-analytics/"><img src="./assets/previews/realmadrid.png" alt="Actual browser capture of the Real Madrid dashboard" width="100%" /></a>
+
+<sub>Actual dashboard capture · <a href="https://moulayid.github.io/real-madrid-analytics/">Open interactive view ↗</a></sub>
+
 A financial analytics project covering revenue and cost trends, investment scenarios, and club benchmarking, with dashboard, API, and data-pipeline code.
 
 `Python` `Streamlit` `FastAPI` `SQLite`

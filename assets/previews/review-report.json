@@ -1,6 +1,12 @@
 {
   "dashboards": [
     {
+      "id": "realmadrid",
+      "status": "captured",
+      "url": "https://moulayid.github.io/real-madrid-analytics/",
+      "chartCount": 26
+    },
+    {
       "id": "dataco",
       "status": "captured",
       "url": "https://moulayid.github.io/DataCo-Global-Supply-Chain-Analytics/",

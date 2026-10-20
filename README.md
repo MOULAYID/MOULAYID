@@ -41,6 +41,8 @@ A portfolio project combining Python data preparation, statistical analysis, and
 
 **Business question:** How do drivers, constructors, circuits, and race strategies compare across Formula 1 history?
 
+<!-- preview:formula1 -->
+
 A Streamlit analytics project with historical performance comparisons, circuit and strategy analysis, and predictive-modelling experiments.
 
 `Python` `Streamlit` `Plotly` `scikit-learn`
@@ -54,10 +56,6 @@ A Streamlit analytics project with historical performance comparisons, circuit a
 **Business question:** How do revenue, costs, and squad investment shape a football club’s financial performance?
 
 <!-- preview:realmadrid -->
-
-<a href="https://moulayid.github.io/real-madrid-analytics/"><img src="./assets/previews/realmadrid.png" alt="Actual browser capture of the Real Madrid dashboard" width="100%" /></a>
-
-<sub>Actual dashboard capture · <a href="https://moulayid.github.io/real-madrid-analytics/">Open interactive view ↗</a></sub>
 
 A financial analytics project covering revenue and cost trends, investment scenarios, and club benchmarking, with dashboard, API, and data-pipeline code.
 

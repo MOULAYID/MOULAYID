@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="330" viewBox="0 0 1280 330" role="img" aria-labelledby="title desc">
+<title id="title">DataCo — Global Supply Chain Analytics project overview</title><desc id="desc">Portfolio project analysing 180,519 order line items, with an 11-page interactive dashboard. Sales, profitability, delivery performance and customers.</desc>
+<rect width="1280" height="330" rx="20" fill="#0F1D2E"/><rect x="1" y="1" width="1278" height="328" rx="19" fill="none" stroke="#294053"/>
+<g font-family="Segoe UI,Arial,sans-serif">
+<rect x="40" y="32" width="170" height="28" rx="14" fill="#153E42"/>
+<text x="125" y="51" text-anchor="middle" fill="#5EEAD4" font-size="12" font-weight="700" letter-spacing="1">PROJECT OVERVIEW</text>
+<text x="40" y="112" fill="#F8FAFC" font-size="38" font-weight="700">DataCo</text>
+<text x="40" y="148" fill="#D2E0EC" font-size="24">Global Supply Chain Analytics</text>
+<text x="40" y="191" fill="#9CB3C8" font-size="17">Sales · Profitability · Delivery · Customers</text>
+<text x="40" y="226" fill="#9CB3C8" font-size="17">Python analysis + an interactive web dashboard</text>
+<text x="40" y="285" fill="#5EEAD4" font-size="16" font-weight="600">EXPLORE THE LIVE DASHBOARD →</text>
+<rect x="755" y="64" width="210" height="195" rx="14" fill="#152A3B"/>
+<text x="779" y="111" fill="#7D9AAE" font-size="12" letter-spacing="2">DATASET</text>
+<text x="779" y="168" fill="#F8FAFC" font-size="36" font-weight="700">180,519</text>
+<text x="779" y="207" fill="#B1C7D8" font-size="16">order line items</text>
+<rect x="985" y="64" width="255" height="195" rx="14" fill="#15363C"/>
+<text x="1009" y="111" fill="#5EEAD4" font-size="12" letter-spacing="2">DASHBOARD</text>
+<text x="1009" y="168" fill="#F8FAFC" font-size="36" font-weight="700">11 pages</text>
+<text x="1009" y="207" fill="#B1D6D4" font-size="16">interactive exploration</text>
+</g></svg>

@@ -22,6 +22,26 @@ jobs:
         run: |
           npm install --no-save --package-lock=false playwright
           npx playwright install --with-deps chromium
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Start Formula 1 dashboard from public source
+        run: |
+          git clone --depth 1 https://github.com/MOULAYID/Formula-1-World-Championship.git "$RUNNER_TEMP/f1"
+          python -m pip install -r "$RUNNER_TEMP/f1/requirements.txt"
+          cd "$RUNNER_TEMP/f1"
+          python -m streamlit run dashboard/Overview.py --server.address 127.0.0.1 --server.port 8501 --server.headless true --browser.gatherUsageStats false > "$RUNNER_TEMP/f1.log" 2>&1 &
+          python - <<'PY'
+          import time, urllib.request
+          for attempt in range(60):
+              try:
+                  urllib.request.urlopen("http://127.0.0.1:8501/_stcore/health", timeout=2)
+                  break
+              except Exception:
+                  time.sleep(1)
+          else:
+              raise RuntimeError("Formula 1 dashboard did not start")
+          PY
       - name: Capture dashboards and review desktop and mobile
         run: node .github/scripts/profile-review.mjs
       - name: Save review evidence

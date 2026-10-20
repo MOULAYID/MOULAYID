@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="320" viewBox="0 0 1280 320" role="img" aria-labelledby="title desc">
+<title id="title">MOULAYID — Data Analyst</title><desc id="desc">SQL, Python, Power BI and Machine Learning. Reliable data. Clear decisions.</desc>
+<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#0B1220"/><stop offset="1" stop-color="#142D42"/></linearGradient><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#B9E5EA" stroke-opacity=".05"/></pattern></defs>
+<rect width="1280" height="320" rx="24" fill="url(#bg)"/><rect width="1280" height="320" rx="24" fill="url(#grid)"/>
+<rect x="54" y="48" width="4" height="221" rx="2" fill="#2DD4BF"/>
+<g font-family="Segoe UI,Arial,sans-serif">
+<text x="82" y="76" fill="#5EEAD4" font-size="14" font-weight="700" letter-spacing="4">DATA • ANALYTICS • RESEARCH</text>
+<text x="80" y="144" fill="#F8FAFC" font-size="56" font-weight="700" letter-spacing="-1">MOULAYID</text>
+<text x="82" y="188" fill="#D5E4F0" font-size="27">Data Analyst</text>
+<text x="82" y="226" fill="#94ADBF" font-size="18">SQL · Python · Power BI · Machine Learning</text>
+<text x="82" y="264" fill="#5EEAD4" font-size="17">Reliable data. Clear decisions.</text>
+</g>
+<g transform="translate(870 58)" fill="none" stroke="#2DD4BF">
+<rect width="340" height="204" rx="18" fill="#102537" stroke-opacity=".3"/>
+<path d="M30 45H310M30 92H310M30 139H310M30 174H310" stroke="#254255" stroke-width="1"/>
+<g fill="#224A60" stroke="none"><rect x="35" y="132" width="27" height="42" rx="4"/><rect x="79" y="110" width="27" height="64" rx="4"/><rect x="123" y="121" width="27" height="53" rx="4"/><rect x="167" y="79" width="27" height="95" rx="4"/><rect x="211" y="94" width="27" height="80" rx="4"/><rect x="255" y="52" width="27" height="122" rx="4"/></g>
+<path d="M48 117L92 92L136 103L180 61L224 76L268 32" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<g fill="#5EEAD4" stroke="#102537" stroke-width="3"><circle cx="48" cy="117" r="5"/><circle cx="92" cy="92" r="5"/><circle cx="136" cy="103" r="5"/><circle cx="180" cy="61" r="5"/><circle cx="224" cy="76" r="5"/><circle cx="268" cy="32" r="5"/></g>
+</g></svg>
